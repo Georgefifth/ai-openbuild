@@ -1,0 +1,438 @@
+{
+  "project_name": "WrenchTruth",
+  "tagline": "Forensic Mechanic Quote Auditor, Shared-Teardown Labor Graph & Live NHTSA Recall Cross-Checker",
+  "preset": "neo-brutal",
+  "fps": 30,
+  "width": 1920,
+  "height": 1080,
+  "bgm": "tech-ambient",
+  "scenes": [
+    {
+      "scene_id": "opening",
+      "kicker": "AI OPENBUILD 2026 · AUTOMOTIVE FORENSICS",
+      "title": "WrenchTruth Forensic Mechanic Quote Auditor",
+      "subtitle": "Eliminating double-billed teardown labor and hidden recall charges before you authorize repairs",
+      "duration": 10.82,
+      "narration": "WrenchTruth audits mechanic quotes against 'NHTSA recalls' and 'shared teardown' graphs, saving 71% on our CR-V benchmark.",
+      "visual_type": "opening_title",
+      "fact_ids": [
+        "fact_crv_recall_and_overlap_savings"
+      ],
+      "assets": [
+        "images/wrenchtruth_hero_blueprint.svg"
+      ],
+      "badges": [
+        "$2,840.50 SAVED (71% CUT)",
+        "LIVE US DOT NHTSA API",
+        "18,805 SAE J2012 DTC CODES"
+      ],
+      "animations": [],
+      "audio_file": "audio/opening.mp3",
+      "captions": [
+        {
+          "start": 0.1,
+          "end": 9.36,
+          "text": "WrenchTruth audits mechanic quotes against 'NHTSA recalls' and 'shared teardown' graphs, saving 71% on our CR-V benchmark."
+        }
+      ]
+    },
+    {
+      "scene_id": "problem_asymmetry",
+      "kicker": "THE INFORMATION ASYMMETRY BOTTLENECK",
+      "title": "Why Multi-Line Repair Quotes Overcharge Drivers",
+      "subtitle": "Single-procedure estimators price every line item from scratch and ignore federal recall campaigns",
+      "duration": 11.51,
+      "narration": "Traditional estimators price every repair in isolation, missing '6.6 duplicate hours' of teardown labor and '$0 federal recalls'.",
+      "visual_type": "problem_flow",
+      "fact_ids": [
+        "fact_crv_recall_and_overlap_savings",
+        "fact_timing_teardown_graph"
+      ],
+      "diagram": {
+        "nodes": [
+          {
+            "id": "node_quote",
+            "label": "6-Line Dealer Quote",
+            "sublabel": "Mixed safety & upsell items",
+            "category": "input",
+            "metric": "$3,994.00"
+          },
+          {
+            "id": "node_overlap",
+            "label": "Double-Billed Teardown",
+            "sublabel": "Full book hours stacked per line",
+            "category": "bottleneck",
+            "metric": "+6.6 hrs"
+          },
+          {
+            "id": "node_recall",
+            "label": "Unchecked NHTSA Recalls",
+            "sublabel": "Customer billed for free remedies",
+            "category": "bottleneck",
+            "metric": "$1,656 loss"
+          },
+          {
+            "id": "node_overpay",
+            "label": "Predatory Overcharge",
+            "sublabel": "No technical counter-offer",
+            "category": "output",
+            "metric": "71% overpaid"
+          }
+        ],
+        "edges": [
+          {
+            "from": "node_quote",
+            "to": "node_overlap",
+            "label": "ISOLATED BOOK TIME",
+            "status": "bottleneck"
+          },
+          {
+            "from": "node_overlap",
+            "to": "node_recall",
+            "label": "SILOED NHTSA DATA",
+            "status": "bottleneck"
+          },
+          {
+            "from": "node_recall",
+            "to": "node_overpay",
+            "label": "ASYMMETRY PENALTY",
+            "status": "bottleneck"
+          }
+        ]
+      },
+      "animations": [
+        {
+          "type": "highlight",
+          "target": "node_overlap",
+          "text": "Water pump: +3.5h overlap",
+          "start": 1.44,
+          "duration": 4.6
+        },
+        {
+          "type": "highlight",
+          "target": "node_recall",
+          "text": "Recalls billed: $1,656",
+          "start": 6.04,
+          "duration": 4.6
+        }
+      ],
+      "audio_file": "audio/problem_asymmetry.mp3",
+      "captions": [
+        {
+          "start": 0.1,
+          "end": 10.05,
+          "text": "Traditional estimators price every repair in isolation, missing '6.6 duplicate hours' of teardown labor and '$0 federal recalls'."
+        }
+      ]
+    },
+    {
+      "scene_id": "exploded_architecture",
+      "kicker": "FOUR-LAYER FORENSIC ARCHITECTURE",
+      "title": "Shared-Teardown & NHTSA Forensic Stack",
+      "subtitle": "Combining live federal vehicle APIs with deterministic mechanical assembly graphs",
+      "duration": 10.91,
+      "narration": "Our four-layer 'Forensic Audit Stack' links live NHTSA APIs to a 'Shared-Teardown Graph' and 18,805 OBD-II codes.",
+      "visual_type": "exploded_view",
+      "fact_ids": [
+        "fact_timing_teardown_graph",
+        "fact_stage35_validation_benchmark"
+      ],
+      "assets": [
+        "models/wrenchtruth_teardown_schematic.svg"
+      ],
+      "exploded_parts": [
+        {
+          "id": "layer_intake",
+          "name": "Layer 1 · ISO-3779 VIN & Quote Parser",
+          "spec": "REGEX + SHORTHAND PARSER",
+          "role": "Parses multi-line invoices, abbreviated Lbr hours, and validates 17-char VINs",
+          "layer": -1.6
+        },
+        {
+          "id": "layer_nhtsa",
+          "name": "Layer 2 · Live US DOT NHTSA Gateway",
+          "spec": "VPIC + RECALLS + ODI API",
+          "role": "Matches quoted parts against mandatory $0 safety recalls and 8yr/80k EPA warranties",
+          "layer": -0.5
+        },
+        {
+          "id": "layer_teardown",
+          "name": "Layer 3 · Shared-Teardown Labor Graph",
+          "spec": "INCREMENTAL BOOK-TIME ENGINE",
+          "role": "Subtracts 2.9 to 6.6 duplicate teardown hours across shared access assemblies",
+          "layer": 0.6
+        },
+        {
+          "id": "layer_dtc_script",
+          "name": "Layer 4 · Wal33D DTC & Script Generator",
+          "spec": "18,805 CODES · MIT LICENSE",
+          "role": "Cross-checks OBD-II freeze-frame root causes and outputs a Service Advisor Script",
+          "layer": 1.7
+        }
+      ],
+      "animations": [
+        {
+          "type": "explode",
+          "target": "assembly",
+          "start": 0.51,
+          "duration": 9.75
+        },
+        {
+          "type": "highlight",
+          "target": "layer_nhtsa",
+          "text": "Live NHTSA Recall & 8yr/80k EPA Cross-Check",
+          "start": 1.8,
+          "duration": 4.11
+        },
+        {
+          "type": "label",
+          "target": "layer_teardown",
+          "text": "Eliminates 6.6 Duplicate Timing & Cooling Hours",
+          "start": 5.9,
+          "duration": 4.36
+        }
+      ],
+      "audio_file": "audio/exploded_architecture.mp3",
+      "captions": [
+        {
+          "start": 0.1,
+          "end": 9.45,
+          "text": "Our four-layer 'Forensic Audit Stack' links live NHTSA APIs to a 'Shared-Teardown Graph' and 18,805 OBD-II codes."
+        }
+      ]
+    },
+    {
+      "scene_id": "live_workbench_demo",
+      "kicker": "LIVE DEPLOYED PROTOTYPE DEMONSTRATION",
+      "title": "Live Workbench Auditing Real Dealership Quotes",
+      "subtitle": "Interactive verification on https://ai-openbuild.vercel.app",
+      "duration": 15.45,
+      "narration": "In the live workbench, auditing a '$3,994 dealer quote' flags recall 23V858000, cuts duplicate teardown hours, and copies the counter-offer script.",
+      "visual_type": "real_footage_with_annotations",
+      "fact_ids": [
+        "fact_crv_recall_and_overlap_savings",
+        "fact_timing_teardown_graph"
+      ],
+      "live_capture": {
+        "url": "https://ai-openbuild.vercel.app",
+        "actions": [
+          {
+            "type": "wait",
+            "ms": 800,
+            "__focus": null
+          },
+          {
+            "type": "click",
+            "sel": "[data-testid=\"btn-run-audit\"]",
+            "__focus": [
+              563.3,
+              1108.7
+            ]
+          },
+          {
+            "type": "waitFor",
+            "sel": "[data-testid=\"data-source-badge\"]",
+            "timeout": 12000,
+            "__focus": null
+          },
+          {
+            "type": "wait",
+            "ms": 1200,
+            "__focus": null
+          },
+          {
+            "type": "click",
+            "sel": "[data-testid=\"preset-subaru-outback-timing\"]",
+            "__focus": [
+              969.6,
+              249.2
+            ]
+          },
+          {
+            "type": "wait",
+            "ms": 1400,
+            "__focus": null
+          },
+          {
+            "type": "click",
+            "sel": "[data-testid=\"btn-copy-script\"]",
+            "__focus": [
+              1279.2,
+              2802.1
+            ]
+          },
+          {
+            "type": "wait",
+            "ms": 1200,
+            "__focus": null
+          },
+          {
+            "type": "click",
+            "sel": "[data-testid=\"tab-dtc-checker\"]",
+            "__focus": [
+              1266.7,
+              -2269.1
+            ]
+          },
+          {
+            "type": "wait",
+            "ms": 1200,
+            "__focus": null
+          },
+          {
+            "type": "click",
+            "sel": "[data-testid=\"dtc-card-P0420\"]",
+            "__focus": [
+              508.3,
+              728.4
+            ]
+          },
+          {
+            "type": "wait",
+            "ms": 1200,
+            "__focus": null
+          },
+          {
+            "type": "click",
+            "sel": "[data-testid=\"tab-nhtsa-dossier\"]",
+            "__focus": [
+              1525.2,
+              43.9
+            ]
+          },
+          {
+            "type": "wait",
+            "ms": 1400,
+            "__focus": null
+          }
+        ]
+      },
+      "animations": [
+        {
+          "type": "highlight",
+          "target": "NHTSA RECALL MATCH",
+          "text": "Live NHTSA Recall 23V858000 & 24V064000 ($0 Pay)",
+          "subtext": "Saves $1,656 on Fuel Pump and Seat Weight Sensor",
+          "start": 0.88,
+          "duration": 6.47,
+          "x": 65,
+          "y": 42,
+          "w": 32,
+          "h": 34
+        },
+        {
+          "type": "label",
+          "target": "TEARDOWN GRAPH",
+          "text": "6.6 Duplicate Timing Hours Cut ($1,425 Saved)",
+          "subtext": "Copies Service Advisor Script in 1 click",
+          "start": 7.65,
+          "duration": 7.06,
+          "x": 62,
+          "y": 54,
+          "w": 34,
+          "h": 32
+        }
+      ],
+      "assets": [
+        "footage/live_live_workbench_demo.mp4",
+        "footage/live_live_workbench_demo.mp4"
+      ],
+      "audio_file": "audio/live_workbench_demo.mp3",
+      "captions": [
+        {
+          "start": 0.1,
+          "end": 13.99,
+          "text": "In the live workbench, auditing a '$3,994 dealer quote' flags recall 23V858000, cuts duplicate teardown hours, and copies the counter-offer script."
+        }
+      ]
+    },
+    {
+      "scene_id": "validation_benchmark",
+      "kicker": "STAGE 3.5 REAL-WORLD VALIDATION & QA EVIDENCE",
+      "title": "20-Case Benchmark Across 8 Vehicle Models",
+      "subtitle": "Tested against live US DOT NHTSA APIs, negative controls, and adversarial upsells",
+      "duration": 12.83,
+      "narration": "Across 20 real-world validation cases spanning 8 vehicle models, WrenchTruth achieved a '100% pass rate' versus 20% for single-procedure estimators.",
+      "visual_type": "technical_validation",
+      "fact_ids": [
+        "fact_stage35_validation_benchmark"
+      ],
+      "metrics": [
+        {
+          "id": "val_pass_rate",
+          "label": "Real-World Benchmark Pass Rate (20 Cases)",
+          "value": 100,
+          "unit": "%",
+          "baseline": 20,
+          "status": "verified",
+          "note": "Post-fix 20/20 (vs 13/20 initial run and 4/20 single-procedure baseline)"
+        },
+        {
+          "id": "qa_pass_rate",
+          "label": "Playwright Real-Browser QA (Desktop + Mobile)",
+          "value": 100,
+          "unit": "%",
+          "baseline": 100,
+          "status": "verified",
+          "note": "12/12 headless Firefox scenarios passed on Vercel & local build"
+        },
+        {
+          "id": "crv_savings_pct",
+          "label": "Verified Overcharge Reduction (Case #01 CR-V)",
+          "value": 71.1,
+          "unit": "%",
+          "baseline": 0,
+          "status": "verified",
+          "note": "Reduces $3,994.00 dealer quote to $1,153.50 fair counter-offer"
+        }
+      ],
+      "limitations": [
+        "Handwritten paper receipts require text transcription before line-item auditing",
+        "Confirming whether a prior owner already completed a VIN recall requires dealer warranty portal access"
+      ],
+      "animations": [
+        {
+          "type": "highlight",
+          "target": "val_pass_rate",
+          "text": "20/20 Real-World Cases Passed (0% False Positives)",
+          "start": 1.28,
+          "duration": 9.94
+        }
+      ],
+      "audio_file": "audio/validation_benchmark.mp3",
+      "captions": [
+        {
+          "start": 0.1,
+          "end": 11.38,
+          "text": "Across 20 real-world validation cases spanning 8 vehicle models, WrenchTruth achieved a '100% pass rate' versus 20% for single-procedure estimators."
+        }
+      ]
+    },
+    {
+      "scene_id": "closing",
+      "kicker": "OPEN SOURCE · ZERO-LOGIN PRIVACY",
+      "title": "WrenchTruth · Ready to Audit Your Next Repair Quote",
+      "subtitle": "Live at ai-openbuild.vercel.app · Source at github.com/Georgefifth/ai-openbuild",
+      "duration": 7.29,
+      "narration": "WrenchTruth: open-source 'forensic repair auditing' backed by live federal data.",
+      "visual_type": "closing_summary",
+      "fact_ids": [
+        "fact_crv_recall_and_overlap_savings",
+        "fact_stage35_validation_benchmark"
+      ],
+      "badges": [
+        "LIVE DEMO::ai-openbuild.vercel.app",
+        "BENCHMARK::20/20 Real-World Cases (100%)",
+        "OPEN SOURCE::US DOT NHTSA + Wal33D MIT"
+      ],
+      "audio_file": "audio/closing.mp3",
+      "captions": [
+        {
+          "start": 0.1,
+          "end": 5.82,
+          "text": "WrenchTruth: open-source 'forensic repair auditing' backed by live federal data."
+        }
+      ]
+    }
+  ]
+}

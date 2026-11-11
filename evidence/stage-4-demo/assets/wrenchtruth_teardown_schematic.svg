@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640">
+  <rect width="960" height="640" fill="#0B1528" rx="8"/>
+  <rect x="20" y="20" width="920" height="600" fill="none" stroke="#FBBF24" stroke-width="2" stroke-opacity="0.6" rx="4"/>
+
+  <text x="48" y="62" fill="#FBBF24" font-family="monospace" font-size="15" font-weight="bold">MECHANICAL TEARDOWN DEPENDENCY TREE · FRONT ENGINE TIMING COVER</text>
+  <text x="48" y="92" fill="#FFFFFF" font-family="sans-serif" font-size="24" font-weight="bold">Why 5 Separate Line Items Share 1 Physical Teardown (6.6 Duplicate Hrs Cut)</text>
+
+  <!-- Primary Root Node -->
+  <rect x="48" y="128" width="864" height="90" fill="#1E3A5F" stroke="#38BDF8" stroke-width="2" rx="4"/>
+  <text x="72" y="158" fill="#38BDF8" font-family="monospace" font-size="14" font-weight="bold">ROOT TEARDOWN ANCHOR · 3.8 HRS TRUE BOOK TIME</text>
+  <text x="72" y="186" fill="#FFFFFF" font-family="sans-serif" font-size="20" font-weight="bold">1. Drain Coolant → 2. Remove Serpentine Belt → 3. Unbolt Mount &amp; Timing Covers</text>
+  <text x="72" y="206" fill="#CBD5E1" font-family="monospace" font-size="13">Primary Procedure: Timing Belt &amp; Hydraulic Tensioner Replacement (Billed: 4.2h → Audited: 3.8h)</text>
+
+  <!-- 4 Dependent Child Procedures -->
+  <rect x="48" y="256" width="416" height="145" fill="#112240" stroke="#22C55E" stroke-width="2" rx="4"/>
+  <text x="68" y="286" fill="#4ADE80" font-family="monospace" font-size="14" font-weight="bold">CHILD #1 · ENGINE WATER PUMP</text>
+  <text x="68" y="314" fill="#EF4444" font-family="monospace" font-size="16" text-decoration="line-through">Shop Billed: 3.5 hrs ($595)</text>
+  <text x="68" y="342" fill="#4ADE80" font-family="monospace" font-size="18" font-weight="bold">Incremental Add-On: 0.5 hrs ($85)</text>
+  <text x="68" y="372" fill="#94A3B8" font-family="sans-serif" font-size="13">Driven by timing belt; 90% of access already done.</text>
+
+  <rect x="496" y="256" width="416" height="145" fill="#112240" stroke="#22C55E" stroke-width="2" rx="4"/>
+  <text x="516" y="286" fill="#4ADE80" font-family="monospace" font-size="14" font-weight="bold">CHILD #2 · SERPENTINE DRIVE BELT</text>
+  <text x="516" y="314" fill="#EF4444" font-family="monospace" font-size="16" text-decoration="line-through">Shop Billed: 1.0 hr ($170)</text>
+  <text x="516" y="342" fill="#4ADE80" font-family="monospace" font-size="18" font-weight="bold">Incremental Add-On: 0.0 hrs ($0)</text>
+  <text x="516" y="372" fill="#94A3B8" font-family="sans-serif" font-size="13">Must be removed anyway to reach timing cover.</text>
+
+  <rect x="48" y="426" width="416" height="145" fill="#112240" stroke="#22C55E" stroke-width="2" rx="4"/>
+  <text x="68" y="456" fill="#4ADE80" font-family="monospace" font-size="14" font-weight="bold">CHILD #3 · COOLANT THERMOSTAT (P0128)</text>
+  <text x="68" y="484" fill="#EF4444" font-family="monospace" font-size="16" text-decoration="line-through">Shop Billed: 1.4 hrs ($238)</text>
+  <text x="68" y="512" fill="#4ADE80" font-family="monospace" font-size="18" font-weight="bold">Incremental Add-On: 0.4 hrs ($68)</text>
+  <text x="68" y="542" fill="#94A3B8" font-family="sans-serif" font-size="13">Cooling system is already drained and bled.</text>
+
+  <rect x="496" y="426" width="416" height="145" fill="#112240" stroke="#22C55E" stroke-width="2" rx="4"/>
+  <text x="516" y="456" fill="#4ADE80" font-family="monospace" font-size="14" font-weight="bold">CHILD #4 · COOLANT FLUSH &amp; BLEED</text>
+  <text x="516" y="484" fill="#EF4444" font-family="monospace" font-size="16" text-decoration="line-through">Shop Billed: 1.2 hrs ($204)</text>
+  <text x="516" y="512" fill="#4ADE80" font-family="monospace" font-size="18" font-weight="bold">Incremental Add-On: 0.0 hrs ($0)</text>
+  <text x="516" y="542" fill="#94A3B8" font-family="sans-serif" font-size="13">Included in water pump &amp; thermostat book time.</text>
+</svg>

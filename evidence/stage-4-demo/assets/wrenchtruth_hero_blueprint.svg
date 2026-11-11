@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" width="960" height="640">
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#1E3A5F" stroke-width="0.7" stroke-opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="640" fill="#0B1528" rx="8"/>
+  <rect width="960" height="640" fill="url(#grid)" rx="8"/>
+  <rect x="16" y="16" width="928" height="608" fill="none" stroke="#38BDF8" stroke-width="2" stroke-opacity="0.5" rx="4"/>
+
+  <!-- Top Blueprint Header Stamp -->
+  <rect x="36" y="36" width="888" height="64" fill="#112240" stroke="#38BDF8" stroke-width="1.5" rx="4"/>
+  <rect x="52" y="50" width="180" height="36" fill="#D94E1F" rx="2"/>
+  <text x="142" y="73" fill="#FFFFFF" font-family="monospace" font-size="15" font-weight="bold" text-anchor="middle">WRENCHTRUTH v2.6</text>
+  <text x="252" y="65" fill="#F8FAFC" font-family="sans-serif" font-size="18" font-weight="bold">FORENSIC WORK ORDER REDLINE DIFF · 2020 HONDA CR-V</text>
+  <text x="252" y="86" fill="#94A3B8" font-family="monospace" font-size="13">VIN: 2HKRW2H59LH601234 · LIVE US DOT NHTSA FEED + SHARED-TEARDOWN GRAPH</text>
+
+  <!-- Left Column: Original Shop Quote vs Audited Fair Counter-Offer -->
+  <rect x="36" y="120" width="420" height="210" fill="#1E1B2E" stroke="#EF4444" stroke-width="2" rx="4"/>
+  <text x="56" y="150" fill="#FCA5A5" font-family="monospace" font-size="14" font-weight="bold">DEALERSHIP ESTIMATE (6 ITEMS)</text>
+  <text x="56" y="202" fill="#EF4444" font-family="monospace" font-size="46" font-weight="bold" text-decoration="line-through">$3,994.00</text>
+  <text x="56" y="236" fill="#E2E8F0" font-family="monospace" font-size="14">• Fuel Pump Billed: $983 (Active Recall!)</text>
+  <text x="56" y="262" fill="#E2E8F0" font-family="monospace" font-size="14">• Seat Sensor Billed: $673 (Active Recall!)</text>
+  <text x="56" y="288" fill="#E2E8F0" font-family="monospace" font-size="14">• Control Arm + Ball Joint: 6.0h Billed</text>
+  <text x="56" y="314" fill="#E2E8F0" font-family="monospace" font-size="14">• BG Chemical Flush Upsell: $280 Billed</text>
+
+  <!-- Right Column: Audited Counter-Offer -->
+  <rect x="504" y="120" width="420" height="210" fill="#0D2818" stroke="#22C55E" stroke-width="2" rx="4"/>
+  <text x="524" y="150" fill="#86EFAC" font-family="monospace" font-size="14" font-weight="bold">AUDITED FAIR COUNTER-OFFER</text>
+  <text x="524" y="202" fill="#4ADE80" font-family="monospace" font-size="46" font-weight="bold">$1,153.50</text>
+  <rect x="770" y="164" width="134" height="36" fill="#15803D" rx="4"/>
+  <text x="837" y="187" fill="#FFFFFF" font-family="monospace" font-size="15" font-weight="bold" text-anchor="middle">SAVE 71%</text>
+  <text x="524" y="236" fill="#DCFCE7" font-family="monospace" font-size="14">✓ NHTSA Recall 23V858000: $0.00 (-$983)</text>
+  <text x="524" y="262" fill="#DCFCE7" font-family="monospace" font-size="14">✓ NHTSA Recall 24V064000: $0.00 (-$673)</text>
+  <text x="524" y="288" fill="#DCFCE7" font-family="monospace" font-size="14">✓ Shared Knuckle Teardown: 3.1h (-$537)</text>
+  <text x="524" y="314" fill="#DCFCE7" font-family="monospace" font-size="14">✓ Chemical Upsell Declined: $0.00 (-$280)</text>
+
+  <!-- Arrow connecting left & right -->
+  <path d="M 462 225 L 496 225" stroke="#FBBF24" stroke-width="4"/>
+  <polygon points="496,217 508,225 496,233" fill="#FBBF24"/>
+
+  <!-- Bottom Schematic: Shared-Teardown Mechanical Overlap Graph -->
+  <rect x="36" y="352" width="888" height="250" fill="#112240" stroke="#FBBF24" stroke-width="2" rx="4"/>
+  <text x="56" y="384" fill="#FBBF24" font-family="monospace" font-size="15" font-weight="bold">SHARED MECHANICAL TEARDOWN GRAPH · FRONT SUSPENSION KNUCKLE ASSEMBLY</text>
+  <rect x="680" y="364" width="224" height="30" fill="#D94E1F" rx="2"/>
+  <text x="792" y="384" fill="#FFFFFF" font-family="monospace" font-size="13" font-weight="bold" text-anchor="middle">-2.9 DUPLICATE HRS CUT</text>
+
+  <!-- 3 Shared Access Nodes -->
+  <rect x="56" y="408" width="260" height="86" fill="#1E3A5F" stroke="#38BDF8" stroke-width="1.5" rx="4"/>
+  <text x="72" y="432" fill="#FBBF24" font-family="monospace" font-size="12" font-weight="bold">SHARED ACCESS STEP 01</text>
+  <text x="72" y="454" fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold">Lift Front Axle &amp; Remove</text>
+  <text x="72" y="474" fill="#CBD5E1" font-family="sans-serif" font-size="13">Front Wheels + Splash Shields</text>
+
+  <rect x="350" y="408" width="260" height="86" fill="#1E3A5F" stroke="#38BDF8" stroke-width="1.5" rx="4"/>
+  <text x="366" y="432" fill="#FBBF24" font-family="monospace" font-size="12" font-weight="bold">SHARED ACCESS STEP 02</text>
+  <text x="366" y="454" fill="#FFFFFF" font-family="sans-serif" font-size="14" font-weight="bold">Separate Ball Joint Stud</text>
+  <text x="366" y="474" fill="#CBD5E1" font-family="sans-serif" font-size="13">From Front Steering Knuckle</text>
+
+  <rect x="644" y="408" width="260" height="86" fill="#1E3A5F" stroke="#38BDF8" stroke-width="1.5" rx="4"/>
+  <text x="660" y="432" fill="#FBBF24" font-family="monospace" font-size="12" font-weight="bold">INCREMENTAL ADD-ON</text>
+  <text x="660" y="454" fill="#4ADE80" font-family="monospace" font-size="15" font-weight="bold">2.8h + 0.3h = 3.1h Total</text>
+  <text x="660" y="474" fill="#CBD5E1" font-family="monospace" font-size="13">Instead of 6.0h Standalone</text>
+
+  <!-- Bottom Savings Banner -->
+  <rect x="56" y="514" width="848" height="68" fill="#0B1528" stroke="#22C55E" stroke-width="1.5" rx="4"/>
+  <text x="76" y="544" fill="#4ADE80" font-family="monospace" font-size="20" font-weight="bold">TOTAL VERIFIED SAVINGS: $2,840.50 (71% REDUCTION)</text>
+  <text x="76" y="568" fill="#94A3B8" font-family="monospace" font-size="13">Generated Ready-to-Send Service Advisor Counter-Offer Script in 2.1 Seconds</text>
+</svg>

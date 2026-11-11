@@ -1,0 +1,49 @@
+{
+  "project_name": "WrenchTruth",
+  "last_updated": "2026-11-11",
+  "facts": [
+    {
+      "fact_id": "fact_crv_recall_and_overlap_savings",
+      "claim": "On the 2020 Honda CR-V ($3,994 dealer quote), WrenchTruth identifies active NHTSA Recalls 23V858000 and 24V064000 ($1,656 covered at $0) plus 2.9 duplicate front-suspension teardown hours, saving $2,840.50 (71%)",
+      "status": "verified",
+      "evidence": [
+        "public/images/wrenchtruth_hero_blueprint.svg",
+        "../../Hack/ai-openbuild/evidence/stage-2-build.md",
+        "../../Hack/ai-openbuild/evidence/stage-3.5-validation/post-fix-results.json"
+      ],
+      "allowed_in_video": true
+    },
+    {
+      "fact_id": "fact_timing_teardown_graph",
+      "claim": "Shared-Teardown Mechanical Graph eliminates 6.6 duplicate billed hours ($1,122 overcharge) across Timing Belt, Water Pump, Serpentine Belt, Thermostat, and Coolant Bleed on the 2014 Honda Odyssey V6 quote",
+      "status": "verified",
+      "evidence": [
+        "public/models/wrenchtruth_teardown_schematic.svg",
+        "../../Hack/ai-openbuild/evidence/stage-3.5-validation/post-fix-results.json"
+      ],
+      "allowed_in_video": true
+    },
+    {
+      "fact_id": "fact_stage35_validation_benchmark",
+      "claim": "WrenchTruth achieves 100% pass rate (20/20 real-world validation cases across 8 vehicle models) vs 20% for a single-procedure estimator baseline, and 12/12 real-browser Playwright QA scenarios",
+      "status": "verified",
+      "evidence": [
+        "../../Hack/ai-openbuild/evidence/stage-3.5-validation/report.md",
+        "../../Hack/ai-openbuild/evidence/stage-3-qa/report.md"
+      ],
+      "allowed_in_video": true
+    },
+    {
+      "fact_id": "fact_unverified_handwritten_ocr",
+      "claim": "The prototype directly decodes blurry handwritten paper receipts without text transcription",
+      "status": "unverified",
+      "evidence": [],
+      "allowed_in_video": false,
+      "forbidden_phrases": [
+        "decodes blurry handwritten paper receipts",
+        "100% handwritten cursive OCR",
+        "guarantees dealer warranty portal access"
+      ]
+    }
+  ]
+}

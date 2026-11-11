@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-paper: #F4F1EA;
+    --bg-surface: #FFFFFF;
+    --bg-well: #EAE5D9;
+    --ink-primary: #141413;
+    --ink-muted: #57534E;
+    --signal-orange: #D94E1F;
+    --signal-orange-hover: #B83D14;
+    --gauge-emerald: #15803D;
+    --amber-caution: #B45309;
+    --hydraulic-red: #B91C1C;
+    --blueprint-navy: #1E3A5F;
+    --border-grid: #D6D0C4;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-paper);
+    color: var(--ink-primary);
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-mono-tech {
+    font-family: 'IBM Plex Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.blueprint-grid {
+  background-image:
+    linear-gradient(to right, rgba(20, 20, 19, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 20, 19, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.work-order-card {
+  border: 2px solid #141413;
+  box-shadow: 3px 3px 0px #141413;
+}
+
+.work-order-subcard {
+  background-color: #FFFFFF;
+  border: 1px solid #C8C1B4;
+}
+
+.stamp-badge {
+  font-family: 'IBM Plex Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}

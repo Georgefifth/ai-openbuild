@@ -106,7 +106,7 @@ export async function queryLiveNhtsaData(params: {
       results?: Array<Record<string, unknown>>;
     };
     if (Array.isArray(recJson?.results)) {
-      recJson.results.slice(0, 10).forEach((r) => {
+      recJson.results.slice(0, 40).forEach((r) => {
         recalls.push({
           nhtsaCampaignNumber: String(r.NHTSACampaignNumber || ''),
           component: String(r.Component || 'UNKNOWN SUBSYSTEM'),

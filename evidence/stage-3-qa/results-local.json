@@ -1,0 +1,174 @@
+{
+  "base": "http://127.0.0.1:4588",
+  "browser": "firefox",
+  "headed": false,
+  "startedAt": "2026-11-11T15:00:54.067Z",
+  "finishedAt": "2026-11-11T15:01:11.836Z",
+  "summary": {
+    "total": 12,
+    "pass": 12,
+    "fail": 0
+  },
+  "results": [
+    {
+      "viewport": "desktop",
+      "id": "s01-first-visit-and-empty-state",
+      "title": "Landing page usability, zero horizontal overflow, and actionable empty state recovery",
+      "status": "pass",
+      "ms": 640,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/s01-first-visit-and-empty-state-landing-desktop.png",
+        "evidence/stage-3-qa/screens/s01-first-visit-and-empty-state-empty-state-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "s02-core-flow-live-nhtsa-audit",
+      "title": "End-to-end forensic quote audit with live US DOT NHTSA API recall & teardown detection",
+      "status": "pass",
+      "ms": 3069,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/s02-core-flow-live-nhtsa-audit-live-nhtsa-audit-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "s03-presets-and-counter-offer-toggles",
+      "title": "Multi-case timing belt teardown graph, interactive line toggles, and script copy",
+      "status": "pass",
+      "ms": 483,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/s03-presets-and-counter-offer-toggles-case02-timing-overlap-desktop.png",
+        "evidence/stage-3-qa/screens/s03-presets-and-counter-offer-toggles-script-copied-toast-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "s04-validation-and-custom-quote",
+      "title": "ISO-3779 VIN validation, SAE J2012 DTC validation, and custom quote audit",
+      "status": "pass",
+      "ms": 2700,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/s04-validation-and-custom-quote-validation-errors-desktop.png",
+        "evidence/stage-3-qa/screens/s04-validation-and-custom-quote-custom-quote-audited-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "s05-dtc-and-nhtsa-dossier-tabs",
+      "title": "Anti-Parts-Cannon OBD-II DTC explorer and Federal NHTSA Dossier subsystem filter",
+      "status": "pass",
+      "ms": 361,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/s05-dtc-and-nhtsa-dossier-tabs-dtc-p0420-detail-desktop.png",
+        "evidence/stage-3-qa/screens/s05-dtc-and-nhtsa-dossier-tabs-nhtsa-dossier-desktop.png"
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "id": "s06-keyboard-and-a11y",
+      "title": "Keyboard focus navigation, form label associations, and >=44px touch targets",
+      "status": "pass",
+      "ms": 111,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": []
+    },
+    {
+      "viewport": "mobile",
+      "id": "s01-first-visit-and-empty-state",
+      "title": "Landing page usability, zero horizontal overflow, and actionable empty state recovery",
+      "status": "pass",
+      "ms": 609,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/s01-first-visit-and-empty-state-landing-mobile.png",
+        "evidence/stage-3-qa/screens/s01-first-visit-and-empty-state-empty-state-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "s02-core-flow-live-nhtsa-audit",
+      "title": "End-to-end forensic quote audit with live US DOT NHTSA API recall & teardown detection",
+      "status": "pass",
+      "ms": 3436,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/s02-core-flow-live-nhtsa-audit-live-nhtsa-audit-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "s03-presets-and-counter-offer-toggles",
+      "title": "Multi-case timing belt teardown graph, interactive line toggles, and script copy",
+      "status": "pass",
+      "ms": 658,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/s03-presets-and-counter-offer-toggles-case02-timing-overlap-mobile.png",
+        "evidence/stage-3-qa/screens/s03-presets-and-counter-offer-toggles-script-copied-toast-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "s04-validation-and-custom-quote",
+      "title": "ISO-3779 VIN validation, SAE J2012 DTC validation, and custom quote audit",
+      "status": "pass",
+      "ms": 3317,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/s04-validation-and-custom-quote-validation-errors-mobile.png",
+        "evidence/stage-3-qa/screens/s04-validation-and-custom-quote-custom-quote-audited-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "s05-dtc-and-nhtsa-dossier-tabs",
+      "title": "Anti-Parts-Cannon OBD-II DTC explorer and Federal NHTSA Dossier subsystem filter",
+      "status": "pass",
+      "ms": 534,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": [
+        "evidence/stage-3-qa/screens/s05-dtc-and-nhtsa-dossier-tabs-dtc-p0420-detail-mobile.png",
+        "evidence/stage-3-qa/screens/s05-dtc-and-nhtsa-dossier-tabs-nhtsa-dossier-mobile.png"
+      ]
+    },
+    {
+      "viewport": "mobile",
+      "id": "s06-keyboard-and-a11y",
+      "title": "Keyboard focus navigation, form label associations, and >=44px touch targets",
+      "status": "pass",
+      "ms": 220,
+      "error": null,
+      "errors": [],
+      "warnings": [],
+      "screenshots": []
+    }
+  ]
+}

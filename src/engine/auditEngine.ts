@@ -118,7 +118,7 @@ const PROCEDURE_CATALOG: ProcedureSpec[] = [
   {
     id: 'front-control-arm',
     canonicalName: 'Front Lower Control Arm Assembly (Left & Right)',
-    keywords: /control\s*arm/i,
+    keywords: /(?!.*rear).*control\s*arm/i,
     subsystem: 'Steering & Suspension',
     safetyPriority: 'CRITICAL_SAFETY',
     fairPartMin: 220,
@@ -131,6 +131,76 @@ const PROCEDURE_CATALOG: ProcedureSpec[] = [
       'Separate lower ball joint stud from steering knuckle',
       'Unbolt sway bar end link & control arm subframe bushings'
     ]
+  },
+  {
+    id: 'wheel-speed-sensor',
+    canonicalName: 'ABS Wheel Speed Sensor & Tone Ring Harness Replacement',
+    keywords: /wheel\s*speed\s*sensor|abs\s*sensor|c0035/i,
+    subsystem: 'Steering & Suspension',
+    safetyPriority: 'REQUIRED_SOON',
+    fairPartMin: 35,
+    fairPartMax: 90,
+    standaloneBookHours: 0.9,
+    teardownClusterId: 'FRONT_SUSPENSION_KNUCKLE',
+    teardownClusterTitle: 'Front Suspension Knuckle & Subframe Corner Teardown',
+    sharedAccessSteps: [
+      'Raise vehicle, remove front wheel & access steering knuckle sensor boss (already exposed during control arm / knuckle service)'
+    ],
+    addOnIncrementalHours: 0.2
+  },
+  {
+    id: 'rear-toe-link',
+    canonicalName: 'Rear Suspension Toe Link / Rear Control Arm Assembly',
+    keywords: /toe\s*link|rear\s*suspension.*arm|rear.*control\s*arm/i,
+    subsystem: 'Steering & Suspension',
+    safetyPriority: 'CRITICAL_SAFETY',
+    fairPartMin: 140,
+    fairPartMax: 260,
+    standaloneBookHours: 1.8,
+    recallKeywords: /suspension:rear|toe\s*link|rear\s*suspension/i
+  },
+  {
+    id: 'brake-caliper',
+    canonicalName: 'Disc Brake Caliper & Piston Assembly Replacement',
+    keywords: /brake\s*caliper|caliper.*piston/i,
+    subsystem: 'Brakes & Hydraulic',
+    safetyPriority: 'CRITICAL_SAFETY',
+    fairPartMin: 110,
+    fairPartMax: 220,
+    standaloneBookHours: 1.4,
+    recallKeywords: /caliper/i
+  },
+  {
+    id: 'backup-camera',
+    canonicalName: 'Rearview Backup / Park Assist Camera Replacement',
+    keywords: /(rearview|backup|back\s*up|park\s*assist)\s*camera/i,
+    subsystem: 'Electrical & Airbag',
+    safetyPriority: 'REQUIRED_SOON',
+    fairPartMin: 120,
+    fairPartMax: 240,
+    standaloneBookHours: 1.1,
+    recallKeywords: /camera|back\s*over\s*prevention|back\s*up\s*light/i
+  },
+  {
+    id: 'seat-belt-pretensioner',
+    canonicalName: 'Front Seat Belt Buckle & Pretensioner Assembly',
+    keywords: /seat\s*belt.*(buckle|pretensioner|assembly)/i,
+    subsystem: 'Electrical & Airbag',
+    safetyPriority: 'CRITICAL_SAFETY',
+    fairPartMin: 140,
+    fairPartMax: 250,
+    standaloneBookHours: 1.2,
+    recallKeywords: /seat\s*belt/i
+  },
+  {
+    id: 'evap-purge-valve',
+    canonicalName: 'Under-Hood EVAP Canister Purge Solenoid Valve',
+    keywords: /evap.*purge|purge\s*(valve|solenoid)|p0455/i,
+    subsystem: 'Fuel & Emissions',
+    safetyPriority: 'OPTIONAL_MAINTENANCE',
+    fairPartMin: 38,
+    fairPartMax: 85,
+    standaloneBookHours: 0.5
   },
   {
     id: 'front-ball-joint',
@@ -307,6 +377,18 @@ const PROCEDURE_CATALOG: ProcedureSpec[] = [
     upsellReason: 'Non-OEM chemical additive upsell. Factory service manuals explicitly advise against third-party petroleum swell additives in modern synthetic engine oils.'
   },
   {
+    id: 'nitrogen-tire-package',
+    canonicalName: 'Nitrogen Tire Inflation & Moisture Purge Upsell Package',
+    keywords: /nitrogen.*tire|tire.*nitrogen/i,
+    subsystem: 'Fluids & Preventive',
+    safetyPriority: 'UNNECESSARY_UPSELL',
+    fairPartMin: 0,
+    fairPartMax: 10,
+    standaloneBookHours: 0.0,
+    isWalletFlushUpsell: true,
+    upsellReason: 'Ambient air is already 78% nitrogen. Consumer Reports and AAA testing confirm paid nitrogen tire packages provide zero measurable fuel economy or tread-wear benefit for passenger vehicles.'
+  },
+  {
     id: 'cabin-engine-air-filter',
     canonicalName: 'Cabin Pollen & Engine Air Filter Elements',
     keywords: /(cabin|engine|pollen)\s*air\s*filter/i,
@@ -365,11 +447,12 @@ export function parseRawQuoteText(rawText: string, defaultLaborRate = 175): Quot
   lines.forEach((line, idx) => {
     // Strip leading numbering like "1. " or "- "
     const clean = line.replace(/^\d+[\.\)]\s*|^[-*•]\s*/, '');
-    // Match Parts: $X | Labor: Y hrs @ $Z/hr
+    // Match Parts: $X | Labor: Y hrs @ $Z/hr (including abbreviated Lbr 4.1h)
     const partsMatch = clean.match(/parts?\s*[:=-]?\s*\$?\s*(\d+(?:\.\d{1,2})?)/i);
-    const laborHrsMatch = clean.match(/labor\s*[:=-]?\s*(\d+(?:\.\d{1,2})?)\s*(?:hrs?|hours?)/i) ||
-                          clean.match(/(\d+(?:\.\d{1,2})?)\s*(?:hrs?|hours?)/i);
-    const rateMatch = clean.match(/@\s*\$?\s*(\d+(?:\.\d{1,2})?)\s*\/?\s*(?:hr|hour)/i);
+    const laborHrsMatch =
+      clean.match(/(?:labor|lbr)\s*[:=-]?\s*(\d+(?:\.\d{1,2})?)\s*(?:hrs?|hours?|h\b)/i) ||
+      clean.match(/(\d+(?:\.\d{1,2})?)\s*(?:hrs?|hours?|h\b)/i);
+    const rateMatch = clean.match(/@\s*\$?\s*(\d+(?:\.\d{1,2})?)\s*\/?\s*(?:hr|hour|h\b)/i);
 
     let partPrice = partsMatch ? parseFloat(partsMatch[1]) : 0;
     let laborHours = laborHrsMatch ? parseFloat(laborHrsMatch[1]) : 1.0;
@@ -475,6 +558,19 @@ export function runForensicAudit(params: {
           (descWords.includes('seat weight') || descWords.includes('occupant')) &&
           (hay.includes('seat weight') || hay.includes('occupant classification'))
         ) {
+          return true;
+        }
+        if (descWords.includes('caliper') && hay.includes('caliper')) return true;
+        if (
+          (descWords.includes('toe link') || descWords.includes('rear suspension')) &&
+          (hay.includes('toe link') || hay.includes('suspension:rear') || hay.includes('rear suspension'))
+        ) {
+          return true;
+        }
+        if (descWords.includes('camera') && (hay.includes('camera') || hay.includes('rearview'))) {
+          return true;
+        }
+        if (descWords.includes('seat belt') && hay.includes('seat belt')) {
           return true;
         }
         if (descWords.includes('subframe') && hay.includes('subframe')) return true;
